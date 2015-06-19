@@ -11,7 +11,7 @@
   background: rgba(0, 0, 0, 0.6); }
 
 .nivo-lightbox-theme-default .nivo-lightbox-content.nivo-lightbox-loading {
-  background: url("/assets/loading.gif") no-repeat 50% 50%; }
+  background: url(image_path("loading.gif")) no-repeat 50% 50%; }
 
 .nivo-lightbox-theme-default .nivo-lightbox-nav {
   top: 10%;
@@ -27,16 +27,16 @@
   }
 
 .nivo-lightbox-theme-default .nivo-lightbox-prev {
-  background-image: url("/assets/prev.png");
+  background-image: url(image_path("prev.png"));
   border-radius: 0 3px 3px 0; }
 
 .nivo-lightbox-theme-default .nivo-lightbox-next {
-  background-image: url("/assets/next.png");
+  background-image: url(image_path("next.png"));
   border-radius: 3px 0 0 3px; }
 
 .nivo-lightbox-theme-default .nivo-lightbox-close {
   display: block;
-  background: url("/assets/close.png") no-repeat 0 0;
+  background: url(image_path("close.png")) no-repeat 0 0;
   width: 16px;
   height: 16px;
   text-indent: -9999px;
