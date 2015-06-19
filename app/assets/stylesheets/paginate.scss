@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    $PAGINATION
+\*------------------------------------*/
+@import 'mixins';
+
+.pagination {
+  @include prefix(border-radius, 5px);
+
+  &>li{
+    &>a, &>span{
+      border: 2px solid #eaedf2;
+      margin-right: 5px;
+      @include prefix(border-radius, 5px);
+      @include setColor(transparent, #eaedf2, #353b47);
+
+      &:hover, &:focus{
+        background-color: #eaedf2;
+      }
+    }
+
+    &:first-child{
+      &>a, &>span{
+        @include prefix(border-radius, 5px);
+      }
+    }
+
+    &:last-child{
+      &>a, &>span{
+        margin-right: 0;
+        @include prefix(border-radius, 5px);
+      }
+    }
+
+    &.active{
+      &>a, &>span, &>a:hover, &>a:focus, &>span:hover, &>span:focus{
+        @include setColor(transparent, #8dc153, #353b47);
+      }
+    }
+
+    &.disabled{
+      &>span, &>a, &>a:hover, &>a:focus{
+        @include setColor(transparent, #f6f7f9, #d7dce5);
+      }
+    }
+  }
+}

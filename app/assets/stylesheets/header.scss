@@ -1,0 +1,136 @@
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+@import 'mixins';
+
+#header {
+  position: relative;
+  z-index: 1000;
+
+  .navbar{
+    height: 90px;
+  }
+
+  .navbar-default{
+    &.navbar-collapsed-sm{
+      border: none;
+      background: none;
+      margin: 0;
+      border-bottom: 1px solid;
+      border-color: #676c75;
+      border-color: rgba(255, 255, 255, 0.25);
+      @include prefix(border-radius, 0);
+
+      .navbar-collapse{
+        background-color: #353b47;
+        background-color: rgba(53, 59, 71, 0.98);
+        border: none;
+        @include prefix(box-shadow, none);
+        -moz-border-radius-bottomleft: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      .navbar-brand{
+        padding: 0;
+        float: none;
+        height: 90px;
+        display: table-cell;
+        vertical-align: middle;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      .navbar-toggle{
+        margin: 27px 0 0;
+        border-color: white;
+        border-width: 2px;
+        @include prefix(border-radius, 5px);
+
+        .icon-bar{
+          background-color: white;
+        }
+
+        &:hover, &:focus{
+          border-color: #8dc153;
+          background-color: #8dc153;
+        }
+      }
+
+      .navbar-nav{
+        &> li{
+          &> a {
+            border-bottom: 1px solid;
+            border-color: #494f5a;
+            border-color: rgba(255, 255, 255, 0.1);
+
+            span{
+              color: white;
+            }
+          }
+
+          &.active{
+            &>a{
+              background-color: #8dc153;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #header{
+    .navbar-default{
+      &.navbar-collapsed-sm{
+
+        .navbar-collapse{
+          background-color: transparent;
+          -moz-border-radius-bottomleft: 0;
+          -webkit-border-bottom-left-radius: 0;
+          border-bottom-left-radius: 0;
+          -moz-border-radius-bottomright: 0;
+          -webkit-border-bottom-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        .navbar-nav{
+          &>li{
+            margin: 0;
+
+            &>a{
+              margin-top: 1px;
+              padding: 0 15px;
+              background-color: transparent;
+              border: none;
+
+              span{
+                color: white;
+                height: 90px;
+                border-bottom: 3px solid transparent;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+                display: table-cell;
+                vertical-align: middle;
+              }
+
+              &:hover, &:focus{
+                background-color: transparent;
+
+                span{
+                  color: white;
+                  color: rgba(255, 255, 255, 0.85);
+                  border-bottom-color: #8dc153;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

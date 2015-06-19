@@ -1,0 +1,90 @@
+#main{:role => "main"}
+  #main-content
+    .container
+      .row-fluid
+        %form.form.form-validation.form-contact{:action => search_path, :method => "get", :novalidate => "novalidate"}
+          .row
+            .col-sm-3
+              .form-group.control-group
+                %input.form-control{"data-rule-required" => "true", :name => "lat", :placeholder => "Latitude", :type => "text", :value => params[:lat]}/
+            .col-sm-3
+              .form-group.control-group
+                %input.form-control{"data-rule-required" => "true", :name => "lng", :placeholder => "Longitude", :type => "text", :value => params[:lng]}/
+            .col-sm-3
+              .form-group.control-group
+                %input.form-control{:name => "distance", :placeholder => "Distance", :type => "text", :value => params[:distance]}/
+            .col-sm-3
+              %button.btn.btn-contrast.btn-block.form-contact-submit{"data-loading-text" => "<i class='fa fa-refresh fa-spin'></i> Sending...", :type => "submit"}
+                %i.fa.fa-search
+                Search Post
+
+      - if @medias.count > 0
+        #media-container.row.media-boxes.isotope
+          - @medias.each_with_index do |media, index|
+            .col-sm-3.media-box.media-item{"data-page" => "#{index / 12 + 1}" }
+              %a{"data-lightbox" => "", "data-lightbox-gallery" => "team", :href => "#description-#{index}"}
+                .image-link
+                  %span.likes
+                    %i.fa.fa-heart= media.likes.data.count
+                    %i.fa.fa-comments-o= media.comments.data.count
+                  - if media.type == 'video'
+                    %span.video
+                      %i.fa.fa-play-circle-o
+                  %img.img-responsive.center-block{:alt => media.user.username, :height => "235", :src => media.images.low_resolution.url, :width => "360"}/
+                .description{:id => "description-#{index}"}
+                  .row
+                    .col-sm-8
+                      - if media.type == 'video'
+                        %video{:width =>"100%", "controls"=> "", :src => media.videos.standard_resolution.url}
+                      - else
+                        %img{:src => media.images.standard_resolution.url, :width => "100%"}/
+                    .right-bar.col-sm-4
+                      .description-header
+                        %img.pull-left.avatar.img-circle{:src => media.user.profile_picture}/
+                        .user-name-content
+                          %p.user-name= media.user.username
+                          %p.location{"data-lat" => media.location.latitude, "data-lng" => media.location.longitude, "data-address" => media.location.address}
+                            - if media.location.present? && media.location.text.present?
+                              %i.fa.fa-map-marker
+                              = media.location.text
+                        .caption
+                          = media.caption.text if media.caption.present?
+                      .description-likes
+                        %i.fa.fa-heart= media.likes.data.count
+                        %i.fa.fa-comments-o= media.comments.data.count
+                      .description-comments
+                        - media.comments.data.each do |comment|
+                          %p.comment
+                            %span.user-name= comment.from.username
+                            %span= comment.text
+        - if @number_page > 1
+          %nav
+            %ul.pagination.pagination-custom
+              %li#prev-page.disabled
+                %a{"aria-label" => "Previous", :href => "#", "data-page" => 1}
+                  %span{"aria-hidden" => "true"} «
+              - @number_page.times.each do |page|
+                - if page == 0
+                  %li.active
+                    %a{:href => "#", "data-page" => page + 1}= page + 1
+                - else
+                  %li
+                    %a{:href => "#", "data-page" => page + 1}= page + 1
+              %li#next-page
+                %a{"aria-label" => "Next", :href => "#", "data-page" => 2}
+                  %span{"aria-hidden" => "true"} »
+      - else
+        - if params[:lat].present?
+          %h3.center NOT FOUND POST
+        - else
+          %h3.center Please enter information
+
+    #map-modal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog{:role => "document"}
+        .modal-content
+          .modal-body
+            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+            #map-canvas
+  #scroll-to-top.fade{:style => "bottom: 10px;"}
+    %i.fa.fa-chevron-up

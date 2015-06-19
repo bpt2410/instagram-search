@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+@import 'mixins';
+
+.btn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 8px 12px;
+  border-width: 2px;
+  @include prefix(border-radius, 5px);
+
+  &.btn-circle{
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    line-height: 35px;
+    width: 40px;
+    height: 40px;
+    @include prefix(border-radius, 100%);
+  }
+
+  &.btn-sm{
+    padding: 4px 18px;
+    font-size: 14px;
+    line-height: 17px;
+    border-width: 2px;
+
+    &.btn-circle{
+      padding: 0;
+      line-height: 25px;
+      width: 29px;
+      height: 29px;
+    }
+  }
+}
+
+.btn-medium-light {
+  background-image: none;
+  @include setColor(#9ca4af, #9ca4af, white);
+
+  &:hover, &:focus{
+    @include setColor(#88929f, #88929f, white);
+  }
+
+  &:active, &.active{
+    @include setColor(#808a98, #808a98, white);
+  }
+
+  &.disabled, &[disabled]{
+    @include setColor(#afb6bf, #afb6bf, #eff0f2);
+
+    &:hover, &:active, &:focus{
+      @include setColor(#afb6bf, #afb6bf, #eff0f2);
+    }
+  }
+
+}
+
+.btn-contrast {
+  background-image: none;
+  @include setColor(#8dc153, #8dc153, white);
+
+  &:hover, &:focus{
+    @include setColor(#7bb140, #7bb140, white);
+  }
+
+  &.active, &:active{
+    @include setColor(#73a53c, #73a53c, white);
+  }
+
+  &.disabled, &[disabled]{
+    @include setColor(#a3cd75, #a3cd75, #ecf5e3);
+
+    &:hover, &:active, &:focus{
+      @include setColor(#a3cd75, #a3cd75, #ecf5e3);
+    }
+  }
+}

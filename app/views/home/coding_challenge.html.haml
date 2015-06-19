@@ -1,0 +1,63 @@
+#main{:role => "main"}
+  #main-content
+    .container
+      .row
+        .col-sm-12
+          %h3 Wonolo Coding Challenge
+
+          %h3 Background
+          %p We are asking you to complete this Coding Challenge so that we can assess your level of experience and competence.
+
+          %p Our objective is to make this Coding Challenge as realistic as possible in terms of:
+          %ul
+            %li the kind of work you’d be doing at Wonolo, and
+            %li the way in which you would be doing it.
+
+          %p So, please feel free to consult Google, StackOverflow, etc, just as you would if you worked at Wonolo.
+
+          %h3 Output
+
+          %p When you are complete, please send me two things:
+
+          %ul
+            %li the URL of the Github repo containing your code
+
+            %li the URL of your app running on Heroku
+
+          %p I will review both your code and the running application.
+
+          %h3 The Challenge
+
+          Create a Rails 4 website that allows the user to search for Instagram posts in a location
+
+          specified by the user.
+
+          %p The user should be able to:
+
+          %p 1. Enter coordinates ­ latitude / longitude
+
+          %p 2. Enter a search radius in kilometers
+
+          %p 3. Hit Search
+
+          %p 4. See a page showing a feed of the Instagram posts in specified location, ordered by
+
+          distance (closest first)
+          %p Paginate through the posts
+
+          %h3 Rules
+
+          %p Use Ruby 2.x and Rails 4.x
+          %p Create specs with RSpec
+          %p Use Git/Github and commit often with comments (I’m interested to see your commit history to understand how you approached the problem)
+          %p Your app must be live on Heroku and must work
+          %p Be creative
+          %p Feel free to use any component, gem, etc that you feel helps or makes the application better
+
+          %h3 Resources
+
+          %a{:href => 'https://instagram.com/developer/endpoints/media/', :target=>'_blank'}https://instagram.com/developer/endpoints/media/
+
+          %h3 Extra Credit
+          %p Use Google Maps to visualize locations of posts
+          %p Show Instagram pictures in a carousel UI

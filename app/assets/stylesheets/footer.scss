@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+#footer{
+  #footer-copyright {
+    background-color: #353b47;
+    color: #565f73;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .copyright {
+    margin: 5px 0 0 0;
+  }
+
+  .links {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  #footer{
+    #footer-copyright {
+      text-align: left;
+
+      .copyright {
+        float: left;
+      }
+
+      .links {
+        float: right;
+        margin-top: 0;
+
+        .btn {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

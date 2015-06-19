@@ -1,0 +1,117 @@
+/*------------------------------------*\
+    $CONTENT
+\*------------------------------------*/
+@import 'mixins';
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #353b47;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Open Sans";
+  color: #676f7a;
+
+  .lead {
+    font-family: "Roboto";
+    font-size: 26px;
+    line-height: 39px;
+    font-weight: 300;
+    color: #434955;
+  }
+}
+
+#wrapper {
+  background-repeat: no-repeat;
+  background-position: center 0;
+}
+
+#main-content {
+  padding: 70px 0 80px 0;
+  background-color: white;
+}
+
+#scroll-to-top {
+  right: 10px;
+  border: 2px solid #eaedf2;
+  color: #8dc153;
+  line-height: 45px;
+  text-align: center;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  @include prefix(border-radius, 10px);
+  @include prefix(transition, opacity 300ms, border-color 300ms, background-color 300ms);
+
+  &.fade.in{
+    &:hover{
+      cursor: pointer;
+      border-color: #cad2df;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #scroll-to-top {
+    display: block;
+  }
+}
+
+/*------------------------------------*\
+    $INPUTS
+\*------------------------------------*/
+input[type="text"]
+{
+  @include prefix(appearance, none);
+}
+
+.form-control {
+  height: 40px;
+  color: #676f7a;
+  border: 2px solid #eaedf2;
+  @include prefix(box-shadow, none);
+
+  &:-moz-placeholder
+  {
+    color: #c5c9ce;
+  }
+
+  &:-ms-input-placeholder
+  {
+    color: #c5c9ce;
+  }
+
+  &:-webkit-input-placeholder
+  {
+    color: #c5c9ce;
+  }
+
+  &:focus {
+    border-color: #bbc5d5;
+    @include prefix(box-shadow, none);
+  }
+
+  &[disabled]{
+    background: #eaedf2;
+  }
+}
+
+.center{
+  text-align: center;
+}
+
+.text-dark {
+  color: #353b47 !important;
+}
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
