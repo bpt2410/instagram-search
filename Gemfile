@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'instagram'
 gem 'geocoder'
 gem 'redis-namespace'
+gem 'exception_notification'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
