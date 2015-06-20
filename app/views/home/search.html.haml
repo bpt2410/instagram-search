@@ -47,6 +47,9 @@
                             - if media.location.present? && media.location.text.present?
                               %i.fa.fa-map-marker
                               = media.location.text
+                            - else
+                              %i.fa.fa-map-marker
+                              Map
                         .caption
                           = media.caption.text if media.caption.present?
                       .description-likes
@@ -77,7 +80,7 @@
         - if params[:lat].present?
           %h3.center NOT FOUND POST
         - else
-          %h3.center Please enter information
+          %h3.center Please enter information for search on instagram
 
     #map-modal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-dialog{:role => "document"}
