@@ -106,7 +106,7 @@ window.renderCarousel = (data, element)->
   itemContent = ''
   index = 0
   data.forEach (media)->
-    itemContent+= "<li class='image-slider col-sm-2' data-id='marker-#{media.id}'>
+    itemContent+= "<li class='image-slider col-sm-2 col-xs-2' data-id='marker-#{media.id}'>
                     <div class='thumbnail'>
                       <a href='#''>
                         <img alt='' src='#{media.images.thumbnail.url}'>
@@ -147,7 +147,7 @@ window.loadData = (data, error, success, submit)->
       if data.message == 'success'
         renderMarkers(data.results)
         renderCarousel(data.results, '#img-carousel-inner')
-        if data.results.length < 6
+        if data.results.length <= 6
           $('.control-box').hide()
         else
           $('.control-box').show()

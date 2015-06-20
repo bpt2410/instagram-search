@@ -3,7 +3,7 @@
 #map-canvas{
   height: 500px;
   width: 100%;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 
   .pin{
     position: absolute;
@@ -122,5 +122,6 @@
 @media (max-width: 768px) {
   #map-canvas .pin.active{
     width: 300px;
+    left: -150px;
   }
 }
