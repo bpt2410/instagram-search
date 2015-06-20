@@ -1,9 +1,7 @@
 # instagram-search
 # The Challenge
 
-Create a Rails 4 website that allows the user to search for Instagram posts in a location
-
-specified by the user.
+Create a Rails 4 website that allows the user to search for Instagram posts in a location specified by the user.
 
 The user should be able to:
 
@@ -13,9 +11,7 @@ The user should be able to:
 
 3. Hit Search
 
-4. See a page showing a feed of the Instagram posts in specified location, ordered by
-
-distance (closest first)
+4. See a page showing a feed of the Instagram posts in specified location, ordered by distance (closest first)
 
 4. Paginate through the posts
 
@@ -25,14 +21,10 @@ distance (closest first)
 
 ­ Create specs with RSpec
 
-­ Use Git/Github and commit often with comments (I’m interested to see your commit
-
-history to understand how you approached the problem)
+­ Use Git/Github and commit often with comments (I’m interested to see your commit history to understand how you approached the problem)
 
 ­ Your app must be live on Heroku and must work
 
 ­ Be creative
 
-­ Feel free to use any component, gem, etc that you feel helps or makes the application
-
-better
+­ Feel free to use any component, gem, etc that you feel helps or makes the application better
