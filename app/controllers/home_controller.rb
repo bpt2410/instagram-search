@@ -17,6 +17,7 @@ class HomeController < ApplicationController
 
   def search
     media = Media.new(Media.access_token)
+    current_location if params[:currentPos].present? && params[:currentPos] == 'true'
     @medias = []
     if params[:lat].present? && params[:lng].present?
       options = params[:distance].present? ? { :distance => params[:distance] } : {}
@@ -25,8 +26,25 @@ class HomeController < ApplicationController
     end
     count = @medias.count
     @number_page = count % 12 == 0 ? count / 12 : count / 12 + 1
+
+    respond_to do |format|
+      format.html
+      format.json { render json: { message: 'success', results: @medias } }
+    end
   end
 
   def coding_challenge
+  end
+
+  private
+
+  def current_location
+    begin
+      if location = request.location
+        params[:lat] = location.latitude
+        params[:lng] = location.longitude
+      end
+    rescue
+    end
   end
 end

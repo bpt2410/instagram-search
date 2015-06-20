@@ -19,13 +19,7 @@ class Media
       distance([lat.to_f, lng.to_f], [item_x.location.latitude, item_x.location.longitude]) <=> distance([lat.to_f, lng.to_f], [item_y.location.latitude, item_y.location.longitude])
     }
 
-    results.map {|item|
-      if location_info = location_by_coordinates(item.location.latitude, item.location.longitude)
-        item.location[:text] = location_info[:location] if item.location[:text].blank?
-        item.location[:address] = location_info[:address]
-      end
-      item
-    }
+    results
   end
 
   def distance(loc1, loc2)

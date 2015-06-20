@@ -29,7 +29,7 @@ body {
 }
 
 #main-content {
-  padding: 70px 0 80px 0;
+  padding: 20px 0 50px 0;
   background-color: white;
 }
 
@@ -114,4 +114,8 @@ input[type="text"]
 .center-block {
   margin-left: auto;
   margin-right: auto;
+}
+
+.no-result{
+  display: none;
 }

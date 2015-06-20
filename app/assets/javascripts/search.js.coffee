@@ -16,6 +16,7 @@ window.setValidateForm = (selector) ->
 
 $(document).ready ->
   setValidateForm()
+  # $('.carousel').carousel interval: 6000
 
   if window.Modernizr and Modernizr.input.placeholder == false
     $('[placeholder]').focus(->

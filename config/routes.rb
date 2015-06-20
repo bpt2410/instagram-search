@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/oauth/connect' => 'home#instagram'
   get '/auth/instagram/callback' => 'home#callback'
-  get '/search' => 'home#search'
+  match '/search', to: 'home#search', via: [:get, :post]
   get '/coding-challenge' => 'home#coding_challenge'
 
   # The priority is based upon order of creation: first created -> highest priority.

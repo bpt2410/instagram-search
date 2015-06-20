@@ -1,0 +1,34 @@
+/* Carousel Control */
+@import 'mixins';
+
+.control-box {
+  text-align: center;
+  width: 100%;
+
+  a{
+    color: #8dc153;
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid;
+    @include prefix(border-radius, 5px);
+    margin: 10px;
+
+    &:hover{
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
+#img-carousel{
+  display: none;
+  .thumbnails{
+    list-style: none;
+
+    .image-slider.active {
+      .thumbnail{
+        border-color: #8dc153;
+      }
+    }
+  }
+}
