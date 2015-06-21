@@ -11,20 +11,28 @@ class HomeController < ApplicationController
 
   def callback
     response = Instagram.get_access_token(params[:code], :redirect_uri => APP_CONFIG['instagram_redirect_callback'])
-    Media.save_access_token(response.access_token)
+    Media.set_access_token(response.access_token)
     redirect_to search_path
   end
 
   def search
-    media = Media.new(Media.access_token)
-    current_location if params[:currentPos].present? && params[:currentPos] == 'true'
-    @medias = []
-    if params[:lat].present? && params[:lng].present?
-      options = params[:distance].present? ? { :distance => params[:distance] } : {}
-      @medias = media.search(params[:lat], params[:lng], options)
+    if request.format == :json
+      message = 'success'
+      media = Media.new(Media.access_token)
+      current_location if params[:currentPos].present? && params[:currentPos] == 'true'
+      @medias = []
+
+      if params[:lat].present? && params[:lng].present?
+        options = params[:distance].present? ? { :distance => params[:distance] } : {}
+        @medias = media.search(params[:lat], params[:lng], options)
+      end
+
+      if @medias.blank?
+        @medias = []
+        message = 'fail'
+      end
+
     end
-    count = @medias.count
-    @number_page = count % 12 == 0 ? count / 12 : count / 12 + 1
 
     respond_to do |format|
       format.html
