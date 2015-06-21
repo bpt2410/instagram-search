@@ -3,4 +3,4 @@ development:
 test:
   instagram_redirect_callback: http://localhost:3000/auth/instagram/callback
 production:
-  instagram_redirect_callback: http://w-instagram.herokuapp.com/auth/instagram/callback
+  instagram_redirect_callback: http://w-instagram-search.herokuapp.com/auth/instagram/callback
