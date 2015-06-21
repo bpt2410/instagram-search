@@ -147,12 +147,12 @@ window.loadData = (data, error, success, submit)->
     success: (data) ->
       if data.message == 'success'
         renderMarkers(data.results)
+        $('#img-carousel').carousel('pause').removeData()
         renderCarousel(data.results, '#img-carousel-inner')
         if data.results.length <= 6
           $('.control-box').hide()
         else
           $('.control-box').show()
-
         $('#img-carousel').carousel interval: 6000
 
       if error? && success?
