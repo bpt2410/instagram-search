@@ -109,7 +109,8 @@ window.renderCarousel = (data, element)->
   data.forEach (media)->
     itemContent+= "<li class='image-slider col-sm-2 col-xs-2' data-id='marker-#{media.id}'>
                     <div class='thumbnail'>
-                      <a href='#''>
+                      <a href='#'>
+                        #{if media.type is 'video' then "<div class='video'><i class='fa fa-play-circle-o'></i></div>" else ''}
                         <img alt='' src='#{media.images.thumbnail.url}'>
                       </a>
                     </div>

@@ -25,9 +25,22 @@
   .thumbnails{
     list-style: none;
 
-    .image-slider.active {
+    .image-slider{
       .thumbnail{
-        border-color: #8dc153;
+        .video{
+          position: absolute;
+          font-size: 40px;
+          color: #fff;
+          width: 80%;
+          top: 30%;
+          text-align: center;
+        }
+      }
+
+      &.active{
+        .thumbnail{
+          border-color: #8dc153;
+        }
       }
     }
   }
