@@ -21,7 +21,6 @@ class HomeController < ApplicationController
     @medias = []
     if params[:lat].present? && params[:lng].present?
       options = params[:distance].present? ? { :distance => params[:distance] } : {}
-
       @medias = media.search(params[:lat], params[:lng], options)
     end
     count = @medias.count

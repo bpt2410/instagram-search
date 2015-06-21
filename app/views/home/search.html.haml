@@ -14,7 +14,7 @@
                 %input.form-control{"data-rule-required" => "true", :name => "lng", :placeholder => "Longitude", :type => "text", :value => params[:lng]}/
             .col-sm-3
               .form-group.control-group
-                %input.form-control{:name => "distance", :placeholder => "Distance", :type => "text", :value => params[:distance]}/
+                %input.form-control{:name => "distance", :placeholder => "Distance(default: 1000, maximum: 5000)", :type => "text", :value => params[:distance]}/
             .col-sm-3
               %button.btn.btn-contrast.btn-block.form-search-submit{"data-loading-text" => "<i class='fa fa-refresh fa-spin'></i> Sending...", :type => "submit"}
                 %i.fa.fa-search

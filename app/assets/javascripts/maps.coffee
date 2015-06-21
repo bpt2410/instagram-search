@@ -38,7 +38,8 @@ window.createMarker = (media)->
         <div class='user-name-content'>
           <p class='user-name'>#{media.user.username}</p>
           <p class='location'>
-            #{if media.location.text? then "<i class='fa fa-map-marker'></i>#{media.location.text}" else ''}
+            #{if media.location.text? then "<i class='fa fa-map-marker'></i>#{media.location.text} - " else ''}
+            <i class='fa fa-clock-o'></i>#{jQuery.timeago(new Date(media.created_time * 1000))}
           </p>
         </div>
         #{caption}
