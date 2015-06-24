@@ -4,6 +4,9 @@
 .control-box {
   text-align: center;
   width: 100%;
+  margin: 15px;
+  position: absolute;
+  bottom: 0px;
 
   a{
     color: #8dc153;
@@ -20,8 +23,11 @@
     }
   }
 }
+
 #img-carousel{
   display: none;
+  min-height: 500px;
+
   .thumbnails{
     list-style: none;
 
@@ -31,8 +37,8 @@
           position: absolute;
           font-size: 40px;
           color: #fff;
-          width: 80%;
-          top: 30%;
+          width: 70%;
+          top: 15%;
           text-align: center;
         }
       }

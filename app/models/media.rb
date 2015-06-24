@@ -52,12 +52,10 @@ class Media
   end
 
   def self.access_token
-    redis = Redis.new
-    redis.get('access_token')
+    Rails.cache.read('access_token')
   end
 
   def self.set_access_token(access_token)
-    redis = Redis.new
-    redis.set('access_token', access_token)
+    Rails.cache.write('access_token', access_token)
   end
 end

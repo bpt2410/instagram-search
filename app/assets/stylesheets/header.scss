@@ -8,7 +8,7 @@
   z-index: 1000;
 
   .navbar{
-    height: 90px;
+    height: 50px;
   }
 
   .navbar-default{
@@ -16,9 +16,6 @@
       border: none;
       background: none;
       margin: 0;
-      border-bottom: 1px solid;
-      border-color: #676c75;
-      border-color: rgba(255, 255, 255, 0.25);
       @include prefix(border-radius, 0);
 
       .navbar-collapse{
@@ -37,7 +34,7 @@
       .navbar-brand{
         padding: 0;
         float: none;
-        height: 90px;
+        height: 50px;
         display: table-cell;
         vertical-align: middle;
         color: #ffffff;
@@ -111,7 +108,7 @@
 
               span{
                 color: white;
-                height: 90px;
+                height: 50px;
                 border-bottom: 3px solid transparent;
                 text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
                 display: table-cell;

@@ -50,9 +50,6 @@ GEM
     columnize (0.9.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    exception_notification (4.1.0)
-      actionmailer (>= 3.0.4)
-      activesupport (>= 3.0.4)
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -133,9 +130,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    redis (3.2.1)
-    redis-namespace (1.5.2)
-      redis (~> 3.0, >= 3.0.4)
     ref (1.0.5)
     rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
@@ -195,7 +189,6 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  exception_notification
   execjs
   geocoder
   haml
@@ -206,7 +199,6 @@ DEPENDENCIES
   jquery-ui-rails (~> 5.0.3)
   pg
   rails (= 4.2.1)
-  redis-namespace
   rspec-expectations
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)

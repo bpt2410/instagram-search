@@ -107,7 +107,7 @@ window.renderCarousel = (data, element)->
   itemContent = ''
   index = 0
   data.forEach (media)->
-    itemContent+= "<li class='image-slider col-sm-2 col-xs-2' data-id='marker-#{media.id}'>
+    itemContent+= "<li class='image-slider col-sm-6 col-xs-6' data-id='marker-#{media.id}'>
                     <div class='thumbnail'>
                       <a href='#'>
                         #{if media.type is 'video' then "<div class='video'><i class='fa fa-play-circle-o'></i></div>" else ''}
@@ -115,13 +115,13 @@ window.renderCarousel = (data, element)->
                       </a>
                     </div>
                   </li>"
-    if index % 6 is 5
-      sliderHtml+= "<div class='item #{if index == 5 then 'active' else ''}'><ul class='thumbnails'>#{itemContent}</ul></div>"
+    if index % 8 is 7
+      sliderHtml+= "<div class='item #{if index == 7 then 'active' else ''}'><ul class='thumbnails'>#{itemContent}</ul></div>"
       itemContent = ''
     index++
 
-  if data.length % 6 isnt 0
-    sliderHtml+= "<div class='item #{if data.length < 6 then 'active' else ''}'><ul class='thumbnails'>#{itemContent}</ul></div>"
+  if data.length % 8 isnt 0
+    sliderHtml+= "<div class='item #{if data.length < 8 then 'active' else ''}'><ul class='thumbnails'>#{itemContent}</ul></div>"
 
   $(element).html(sliderHtml)
   $('.image-slider').click ->
@@ -150,7 +150,7 @@ window.loadData = (data, error, success, submit)->
         renderMarkers(data.results)
         $('#img-carousel').carousel('pause').removeData()
         renderCarousel(data.results, '#img-carousel-inner')
-        if data.results.length <= 6
+        if data.results.length <= 8
           $('.control-box').hide()
         else
           $('.control-box').show()

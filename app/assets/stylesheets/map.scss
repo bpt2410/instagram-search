@@ -1,9 +1,23 @@
 @import 'mixins';
 
+.search-content{
+  margin: 20px 0px;
+
+  .col-sm-9{
+    padding: 0px;
+  }
+
+  .col-sm-3{
+    padding: 0px;
+  }
+}
+
 #map-canvas{
   height: 500px;
   width: 100%;
-  margin: 20px 0px;
+  box-shadow: 0 0 5px 1px rgba(34, 35, 35, 0.97);
+  @include prefix(border-radius, 10px);
+  border: 5px solid;
 
   .pin{
     position: absolute;
@@ -35,7 +49,6 @@
     }
 
     .small{
-
       img{
         width: 76px;
         height: 76px;
@@ -57,9 +70,9 @@
     }
 
     &.active{
-      width: 600px;
+      width: 500px;
       padding: 4px;
-      left: -300px;
+      left: -250px;
 
       .small{
         display: none;

@@ -21,15 +21,18 @@
                 Search Post
       .row-fluid
         %h3.center.no-result Not found post! Please choose other information.
-    #map-canvas
+
     .container
-      .row-fluid
-        #img-carousel.carousel.slide{"data-ride"=>"carousel"}
-          .carousel-inner#img-carousel-inner
-          .control-box
-            %a.left{"data-slide" => "prev", :href => "#img-carousel"}
-              %i.fa.fa-arrow-left
-            %a.right{"data-slide" => "next", :href => "#img-carousel"}
-              %i.fa.fa-arrow-right
+      .row-fluid.search-content
+        .col-sm-9
+          #map-canvas
+        .col-sm-3
+          #img-carousel.carousel.slide{"data-ride"=>"carousel"}
+            .carousel-inner#img-carousel-inner
+            .control-box
+              %a.left{"data-slide" => "prev", :href => "#img-carousel"}
+                %i.fa.fa-arrow-left
+              %a.right{"data-slide" => "next", :href => "#img-carousel"}
+                %i.fa.fa-arrow-right
   #scroll-to-top.fade{:style => "bottom: 10px;"}
     %i.fa.fa-chevron-up

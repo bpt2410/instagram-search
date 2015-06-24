@@ -76,22 +76,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.default_url_options = { :host => 'http://w-instagram-search.herokuapp.com/' }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.mandrillapp.com",
-    :port                 => 587,
-    :domain               => 'mandrillapp.com',
-    :user_name            => 'phutuong24101990@gmail.com',
-    :password             => 'dda5f8fd-c59e-4366-a526-a0f897fcb4d8',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
-     config.middleware.use ExceptionNotification::Rack,
-                        :email => {:email_prefix => "[w-instagram-search.herokuapp.com] ",
-                                   :sender_address => %{ "w-instagram-search.herokuapp.com" <phutuong24101990@gmail.com> },
-                                   :exception_recipients => %w{phutuong24101990@gmail.com}
-                        }
 end
